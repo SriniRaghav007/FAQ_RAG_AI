@@ -1,0 +1,10 @@
+FastAPI Backend
+ ├── /health → check server
+ ├── /ingest → load FAQs to ChromaDB
+ └── /query → uses LangChain RetrievalQA to answer questions
+
+LangChain Components:
+  - HuggingFaceEmbeddings (sentence-transformers)
+  - Chroma VectorStore
+  - HuggingFaceHub LLM (Falcon/Flan)
+  - RetrievalQA chain (Retriever + LLM)

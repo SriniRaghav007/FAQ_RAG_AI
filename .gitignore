@@ -1,0 +1,37 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env.*
+
+# MacOS
+.DS_Store
+
+# Logs
+*.log
+
+# ChromaDB persistence folder
+chroma_db/
+chromadb/
+
+# Model caches (HuggingFace)
+transformers/
+huggingface_hub/
+cache/
+*.safetensors
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# PyCharm / IDE settings
+.idea/
+.vscode/
+
+# Build / dist
+build/
+dist/
+*.egg-info/
