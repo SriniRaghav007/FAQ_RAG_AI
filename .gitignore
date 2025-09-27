@@ -21,17 +21,5 @@ chromadb/
 # Model caches (HuggingFace)
 transformers/
 huggingface_hub/
-cache/
-*.safetensors
 
-# Jupyter notebooks checkpoints
-.ipynb_checkpoints/
-
-# PyCharm / IDE settings
-.idea/
-.vscode/
-
-# Build / dist
-build/
-dist/
-*.egg-info/
+faq_ai

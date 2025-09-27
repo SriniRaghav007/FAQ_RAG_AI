@@ -13,7 +13,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, pipeline
 
 # ---- Load environment variables ----
 load_dotenv()
-HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
+# HF_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 CHROMA_DB_DIR = os.getenv("CHROMA_DB_DIR", "./chroma_store")
 
 # ---- Step 1: Read CSV ----
