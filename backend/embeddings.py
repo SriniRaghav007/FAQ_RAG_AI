@@ -30,5 +30,4 @@ def ingest_faq_csv(csv_path, embeddings):
     metadatas = [{"question": q, "answer": a} for q, a in zip(df["Question"], df["Answer"])]
 
     vectorstore.add_texts(texts=texts, metadatas=metadatas)
-    vectorstore.persist()
     print(f"Ingested {len(texts)} FAQs into ChromaDB.")
