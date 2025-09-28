@@ -22,6 +22,7 @@ I used the above Q/A for testing the RAG pipeline which ingested 151 faq from th
 - python3 -m venv venv_name
 - source venv_name/bin/activate
 - pip3 install -r requirements1.txt
+- cd backend
 - python3 main.py
 - `ingest` to run
 
