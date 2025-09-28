@@ -11,6 +11,15 @@ def get_embeddings():
     model_name = "sentence-transformers/all-MiniLM-L6-v2"
     return HuggingFaceEmbeddings(model_name=model_name)
 
+def question_exists(vectorstore, question_text):
+    # Search for the exact question in the collection
+    results = vectorstore.similarity_search(question_text, k=1)
+    if results:
+        top = results[0]
+        # If the top result is very similar / same text, consider it a duplicate
+        return top.metadata["question"].strip().lower() == question_text.strip().lower()
+    return False
+
 # ---- Ingest CSV into Chroma ----
 def ingest_faq_csv(csv_path, embeddings):
     df = pd.read_csv(csv_path)
@@ -23,11 +32,17 @@ def ingest_faq_csv(csv_path, embeddings):
         persist_directory=CHROMA_DB_DIR
     )
 
-    # Optional: deduplicate before ingestion
+    # Optional: deduplicate within CSV
     df = df.drop_duplicates(subset=["Question", "Answer"])
 
-    texts = (df["Question"] + " " + df["Answer"]).tolist()
-    metadatas = [{"question": q, "answer": a} for q, a in zip(df["Question"], df["Answer"])]
+    added_count = 0
+    for _, row in df.iterrows():
+        question, answer = row["Question"], row["Answer"]
+        if not question_exists(vectorstore, question):
+            vectorstore.add_texts(
+                texts=[f"{question} {answer}"],
+                metadatas=[{"question": question, "answer": answer}]
+            )
+            added_count += 1
 
-    vectorstore.add_texts(texts=texts, metadatas=metadatas)
-    print(f"Ingested {len(texts)} FAQs into ChromaDB.")
+    print(f"Ingested {added_count} new FAQs into ChromaDB (duplicates skipped).")
