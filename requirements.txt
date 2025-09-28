@@ -1,31 +1,7 @@
-# Web framework
-fastapi==0.115.0
-uvicorn[standard]==0.30.6
-
-# LangChain core + community
-langchain==0.3.4
-langchain-community==0.3.3
-
-# LangChain Chroma integration (future-proof)
-langchain-chroma==0.0.8
-
-# LangChain Hugging Face embeddings integration
-langchain-huggingface==0.0.14
-
-# Vector store
-chromadb==0.5.3
-
-# Hugging Face embeddings + transformers
-sentence-transformers==2.2.2
-transformers==4.33.1
-torch==2.1.0
-
-# TensorFlow compatibility for sentence-transformers
-tf-keras==2.11.0
-
-# Environment variables
-python-dotenv==1.0.1
-
-# Data validation + CSV handling
-pandas==2.1.0
-pydantic==2.9.2
+pandas
+langchain_huggingface
+tf-keras
+transformers
+sentence-transformers
+langchain-chroma
+langchain

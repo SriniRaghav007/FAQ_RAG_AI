@@ -19,7 +19,7 @@ def get_vectorstore():
     )
 
 # ---- Initialize Hugging Face LLM ----
-def init_llm(model_name="google/flan-t5-small"):
+def init_llm(model_name="google/flan-t5-large"):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
     pipe = pipeline(

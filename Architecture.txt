@@ -6,5 +6,5 @@ FastAPI Backend
 LangChain Components:
   - HuggingFaceEmbeddings (sentence-transformers)
   - Chroma VectorStore
-  - HuggingFaceHub LLM (Falcon/Flan)
+  - HuggingFaceHub LLM (Flan)
   - RetrievalQA chain (Retriever + LLM)

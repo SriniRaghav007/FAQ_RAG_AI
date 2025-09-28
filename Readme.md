@@ -14,6 +14,5 @@
 Q/A for testing
 
 # STEPS to run the code
-- Get token from hugging face
 - Add it to env
 - create venv and install the requirements from requirements.txt
