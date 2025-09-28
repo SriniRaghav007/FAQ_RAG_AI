@@ -38,10 +38,6 @@ Features
 
 - Generate answers with Hugging Face text-to-text models.
 
-- Interactive Q&A via CLI (future plans: Streamlit/Flask UI).
-
-- Dynamic prompt templates and adjustable model parameters.
-
 ## Setup instructions
 
 - git clone <repo_url>
