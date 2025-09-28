@@ -1,7 +1,0 @@
-pandas
-langchain_huggingface
-tf-keras
-transformers
-sentence-transformers
-langchain-chroma
-langchain
