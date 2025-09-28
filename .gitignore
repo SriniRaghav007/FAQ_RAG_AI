@@ -18,5 +18,5 @@ venv/
 transformers/
 huggingface_hub/
 backend/chroma_store
-faq_ai
+ai_rag
 .env

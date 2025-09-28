@@ -167,7 +167,7 @@ if base_len < 150:
         i += 1
 
 # Build DataFrame
-df = pd.DataFrame(qa_pairs, columns=["question", "answer"])
+df = pd.DataFrame(qa_pairs, columns=["Question", "Answer"])
 
 # Save the DataFrame to the current working directory as faqs.csv
 file_path = "faqs.csv"
